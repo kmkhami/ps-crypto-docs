@@ -1,0 +1,38 @@
+# Create FBO account
+
+Add a new FBO account. 
+
+### Request Params
+
+Note: We may need to include additional params to this that process documents. We are currently unsure exactly what those documents will be. 
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `accountName` | string | Yes | Name of the account. |
+| `userEmail` | string | Yes | Email of the FBO account holder creating the account. |
+| `firstName` | string | Yes | First name of the FBO account holder creating the account. I don't know how this will work with businesses. |
+| `lastName` | string | Yes | Last name of the FBO account holder creating the account. I don't know how this will work with businesses. |
+| `address` | string | Yes | Address of the FBO account holder creating the account. We can break this up into subparams. |
+| `DOB` | string | Yes | Date of birth of FBO account holder. |
+| `Phone` | string | Yes | FBO account holder's phone number. |
+| `SSN` | string | Yes | SSN/TIN of FBO account holder creating account. |
+| `userType` | string | No | Can be 'crypto' or 'normal'. Defines whether or not the FBO account holder will be crypto only. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `result` | string | Yes | Whether or not account creation was successful: ”Success” or “Failure”. |
+| `error` | string | No | Returned if result is “Failure” |
+
+### How this works with Gemini high-level
+
+We forward params to Gemini, they return to us a `clientId` and `account` reference string. It is **VERY** important that these are stored.
+
+### Backend high level
+
+Steps: 
+
+1. Forward request to Gemini assuming successful creation of new FBO account. 
+2. Create the new FBO account holder in the DB storing their `clientId` and `account`
+3. Create a parent FBO account holder using Nelnet's creds mapped to the `clientId` and `account`

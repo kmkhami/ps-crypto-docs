@@ -1,0 +1,25 @@
+# Get Wallet Address
+
+Get a wallet address for a given token
+
+### Request Params
+
+Request a wallet address from Gemini for a given `account`. This endpoint will be hit anytime someone selects a token on the payment page. 
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `account` | string | Yes | The account name of the FBO requesting the address. |
+| `token` | string | Yes | The string identifier of the token the FBO wants the address for. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `result` | string | Yes | Whether or not the address creation was successful: ”Success” or “Failure”. |
+| `address` | string | No | The wallet address that will be added to the payment page |
+| `error` | string | No | Returned if result is “Failure” |
+
+
+### Leftover Design Decisions
+
+Do we want to store these addresses? I don't think it's necessary, but may be a good idea going into the future for other integrations?

@@ -1,0 +1,22 @@
+# Create Page
+
+Add a new payment page.
+
+### Request Params
+
+Note: These params may evolve as we get Figmas for this page. There should be defaults for all values.
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `clientId` | string | Yes | The clientId of the FBO we are adding the page to. |
+| `primaryColor` | string | No | The primary color for the page. |
+| `secondaryColor` | string | No | The secondary color for the page. |
+| `logo` | string | No | The FBO holder's logo. |
+| `tokens` | string[] | No | All of the tokens that the FBO holder wishes to accept. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `result` | string | Yes | Whether or not page creation was successful: ”Success” or “Failure”. |
+| `error` | string | No | Returned if result is “Failure” |

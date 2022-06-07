@@ -1,0 +1,19 @@
+# Get An Asset's Value
+
+Get the USD fiat value for a given asset.
+
+### Request Params
+
+Request the fiat value for an asset from Gemini. This endpoint will be hit anytime someone selects a token on the payment page. 
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `token` | string | Yes | The token that we want the USD fiat value for. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `result` | string | Yes | Whether or not a fiat value was able to be fetched. |
+| `value` | string | No | The USD fiat value of the passed token. |
+| `error` | string | No | Returned if result is “Failure” |

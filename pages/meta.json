@@ -1,5 +1,5 @@
 {
-  "boarding": "Boarding",
-  "reporting": "Reporting",
-  "receiving-payments": "Receiving Payments"
+  "fbo-configuration": "FBO Configuration",
+  "payment-page": "Payment Page",
+  "liquidation": "Liquidation"
 }

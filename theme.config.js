@@ -72,6 +72,6 @@ export default {
   nextLinks: true,
   footer: true,
   footerEditLink: 'Edit this page on GitHub',
-  footerText: <>MIT {new Date().getFullYear()} © QuDAO.</>,
+  footerText: <>MIT {new Date().getFullYear()}.</>,
   unstable_faviconGlyph: '👋',
 }

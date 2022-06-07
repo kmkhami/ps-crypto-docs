@@ -1,0 +1,38 @@
+# Update FBO account
+
+Update an existing FBO account. 
+
+### Request Params
+
+Note: Due to Gemini being bad, all of the same fields for create will be required on their end. I propose making it optional for our API then filling it in when we forward to them.
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `accountName` | string | No | Name of the account. |
+| `userEmail` | string | No | Email of the FBO account holder creating the account. |
+| `firstName` | string | No | First name of the FBO account holder creating the account. I don't know how this will work with businesses. |
+| `lastName` | string | No | Last name of the FBO account holder creating the account. I don't know how this will work with businesses. |
+| `address` | string | No | Address of the FBO account holder creating the account. We can break this up into subparams. |
+| `DOB` | string | No | Date of birth of FBO account holder. |
+| `Phone` | string | No | FBO account holder's phone number. |
+| `SSN` | string | No | SSN/TIN of FBO account holder creating account. |
+| `userType` | string | No | Can be 'crypto' or 'normal'. Defines whether or not the FBO account holder will be crypto only. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `result` | string | Yes | Whether or not account creation was successful: ”Success” or “Failure”. |
+| `error` | string | No | Returned if result is “Failure” |
+
+### How this works with Gemini high-level
+
+We forward information to Gemini. Gemini will **NOT** change the `clientId` or `account`. 
+
+### Backend high level
+
+Steps: 
+
+1. Forward request to Gemini assuming succesful update.
+2. As long as Gemini is succesful, we can update the record in our own db. 
+
