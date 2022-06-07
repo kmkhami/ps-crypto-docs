@@ -1,5 +1,7 @@
 {
   "fbo-configuration": "FBO Configuration",
   "payment-page": "Payment Page",
-  "liquidation": "Liquidation"
+  "liquidation": "Liquidation",
+  "transactions": "Transactions",
+  "reporting": "Reporting"
 }
