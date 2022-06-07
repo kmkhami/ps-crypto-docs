@@ -1,0 +1,17 @@
+# Fetch All Available Token Balances
+
+Get a list of all tokens that an FBO account has available to trade.
+
+### Request Params
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `account` | string | Yes | The account to look up token balances for. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `achAccounts` | [`{token`: `amount}`] | No | Array of token balances. |
+| `result` | string | Yes | Whether or not the fetch was successful: ”Success” or “Failure”. |
+| `error` | string | No | Returned if result is “Failure” |

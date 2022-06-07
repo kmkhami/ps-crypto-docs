@@ -3,5 +3,6 @@
   "ach-withdrawal": "Withdraw Fiat to ACH",
   "add-ACH": "Add ACH account",
   "fetch-all-ach-accounts": "Fetch All ACH accounts",
+  "fetch-available-balances": "Fetch Available Balances",
   "liquidation": "Liquidation"
 }
