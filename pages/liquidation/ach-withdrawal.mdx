@@ -1,0 +1,20 @@
+# Withdraw Funds to ACH account
+
+Liquidate fiat held in Gemini account to the ACH on file.
+
+### Request Params
+
+Note: I am not quite sure how we get the bankId.
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `account` | string | Yes | The account to add the bank account to. |
+| `amount` | string | Yes | The amount of USD fiat to withdraw. |
+| `bankId` | string | Yes | Unique ID for the SEN bank account. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `result` | string | Yes | Whether or not the ACH account addition was successful: ”Success” or “Failure”. |
+| `error` | string | No | Returned if result is “Failure” |

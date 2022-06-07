@@ -1,0 +1,25 @@
+# Fetch All ACH Accounts on File
+
+Get a list of all ACH accounts a FBO owner has available. 
+
+### Request Params
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `account` | string | Yes | The account to look up ACH methods for. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `achAccounts` | [] | No | Array of ACH accounts. |
+| `result` | string | Yes | Whether or not the ACH account addition was successful: ”Success” or “Failure”. |
+| `error` | string | No | Returned if result is “Failure” |
+
+
+### Backend high level
+
+Steps: 
+
+1. Forward request to Gemini assuming success. 
+2. Save the new ACH account to the db as long as it is a success.

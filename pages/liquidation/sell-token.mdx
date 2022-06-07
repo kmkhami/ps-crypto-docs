@@ -1,0 +1,17 @@
+# Place Sell Order For a token
+
+Sell the entire amount of a given token.
+
+### Request Params
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `token` | string | Yes | The token that we want to sell. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `result` | string | Yes | Whether or not a fiat value was able to be fetched. |
+| `value` | string | No | The USD fiat value of the passed token. |
+| `error` | string | No | Returned if result is “Failure” |

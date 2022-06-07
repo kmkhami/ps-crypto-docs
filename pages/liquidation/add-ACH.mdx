@@ -1,0 +1,30 @@
+# Create ACH account
+
+Add a new ACH liquidation account.
+
+### Request Params
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `account` | string | Yes | The account to add the bank account to. |
+| `name` | string | Yes | The name of the ACH account as shown on bank statements. |
+| `type` | string | Yes | The type of ACH account: `checking` or `savings`. |
+| `routing` | string | Yes | The routing number of the bank account to be added. |
+| `accountnumber` | string | Yes | The account number of the bank account to be added. |
+| `default` | string | No | Either `default` or `null` such that the ACH method can be added and set as default. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `referenceId` | string | No | Reference ID for the new bank addition request. Once received, send in a wire from the requested bank account to verify it and enable withdrawals to that account. |
+| `result` | string | Yes | Whether or not the ACH account addition was successful: ”Success” or “Failure”. |
+| `error` | string | No | Returned if result is “Failure” |
+
+
+### Backend high level
+
+Steps: 
+
+1. Forward request to Gemini assuming success. 
+2. Save the new ACH account to the db as long as it is a success.

@@ -1,6 +1,7 @@
 {
   "sell-token": "Place Sell Order",
-  "ach-liquidate": "Liquidate Fiat to ACH",
+  "ach-withdrawal": "Withdraw Fiat to ACH",
   "add-ACH": "Add ACH account",
+  "fetch-all-ach-accounts": "Fetch All ACH accounts",
   "liquidation": "Liquidation"
 }
