@@ -1,0 +1,24 @@
+# Fetch Transaction History
+
+This shows the owner of a FBO account all of their transactions. Idk how this will work, but here are some ideas:
+
+- Look at all sell orders placed for the `account` by querying Gemini
+- Store wallet addresses for each `account` and fetch data from chain
+
+### Request Params
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `account` | string | Yes | The account to fetch transactions for. |
+| `start_date` | string | Yes | The date to start the search for. |
+| `end_date` | string | Yes | The date to end the search for. |
+
+### Response
+
+[Pick Information We Need From Here](https://docs.gemini.com/rest-api/#get-past-trades)
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `responseData` | [] | No | Array of chosen data structure. |
+| `result` | string | Yes | Whether or not the request was successful: ”Success” or “Failure”. |
+| `error` | string | No | Returned if result is “Failure” |

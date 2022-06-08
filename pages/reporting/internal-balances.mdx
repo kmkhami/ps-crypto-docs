@@ -1,0 +1,20 @@
+# Fetch Internal Balances
+
+This tells a merchant what their tax liability is. Idk how this will work, but here are my ideas:
+
+- Aggregate the result of several requests to `fetch-available-balances`.
+
+### Request Params
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `account` | string | Yes | The account to fetch tokens for. |
+
+### Response
+
+| Param | Type | Required | Description |
+| ---- | ---- | ---- | ----------- |
+| `tokenAmounts` | [`{token`: `amount}`] | No | Array of token balances. |
+| `result` | string | Yes | Whether or not the request was successful: ”Success” or “Failure”. |
+| `error` | string | No | Returned if result is “Failure” |
+
